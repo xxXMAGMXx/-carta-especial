@@ -88,7 +88,7 @@ h1{font:clamp(2.5rem,7vw,4.5rem) 'Great Vibes',cursive;color:var(--deep);font-we
   <article class="paper">
     <button class="close-btn" id="closeBtn" aria-label="Cerrar">×</button>
     <div class="paper-top">♡ &nbsp; ✧ &nbsp; ♡</div>
-    <h2>Para alguien especial</h2>
+    <h2>Para mi niña de ojos bonitos</h2>
     <div class="letter-copy" id="letterCopy"></div>
     <div class="signature" id="signature"></div>
     <div class="paper-actions"><button class="next-btn" id="finishBtn">Tengo algo más… ♡</button></div>
@@ -107,11 +107,11 @@ h1{font:clamp(2.5rem,7vw,4.5rem) 'Great Vibes',cursive;color:var(--deep);font-we
 /* PERSONALIZA AQUÍ EL MENSAJE Y LA FIRMA */
 const message = `No sé si exista una forma perfecta de decir todo lo que siento, pero quería encontrar una manera bonita de recordarte lo especial que eres para mí.
 
-A veces, entre los días comunes y las pequeñas cosas, aparecen personas que hacen que todo tenga un brillo diferente. Tú eres una de esas personas.
+A veces, entre los días comunes y las pequeñas cosas, aparecen personas que hacen que todo tenga un brillo diferente. Tú eres una de esas personas, una persona que me hace demasiado bien.
 
-Me gustan las conversaciones, las sonrisas inesperadas y esos momentos que quizá parecen sencillos, pero que terminan convirtiéndose en recuerdos que guardo con mucho cariño.
+Me gustan las conversaciones, las sonrisas inesperadas y esos momentos que quizá parecen sencillos, pero que terminan convirtiéndose en recuerdos que por siempre quedaran en mi mente.
 
-No hice esta carta porque necesitara una fecha especial. La hice porque sí: porque me nació, porque quería sacarte una sonrisa y porque hay cosas bonitas que merecen decirse.
+Hice esta carta para que sepas lo especial e importante que eres para mi, preciosa.
 
 Gracias por ser tú. ♡`;
 const signatureText = "Con mucho cariño…";
@@ -125,6 +125,7 @@ let opened=false, typingTimer=null, audioCtx=null, musicOn=false, musicTimer=nul
 
 function openLetter(){
   if(opened)return; opened=true;
+  if (!musicOn) document.getElementById('musicBtn').click();
   envelope.classList.add('open');
   document.querySelector('.open-btn').textContent='La carta está lista ♡';
   setTimeout(()=>{panel.classList.add('visible');panel.setAttribute('aria-hidden','false');typeMessage();},1050);
